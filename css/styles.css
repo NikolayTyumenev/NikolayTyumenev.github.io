@@ -293,15 +293,24 @@ section {
     gap: 3rem;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* EDIT: Profile photo size and style */
+/* EDIT: Profile photo - CIRCULAR IMAGE */
 .profile-photo {
     width: 250px;
     height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--primary-color);
+    border-radius: 50%; /* This makes it circular! */
+    object-fit: cover; /* Crops image to fit circle */
+    border: 5px solid var(--primary-color); /* EDIT: Change border color */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Nice shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on profile photo */
+.profile-photo:hover {
+    transform: scale(1.05); /* Slightly grows on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* EDIT: About text styling */
