@@ -1,23 +1,20 @@
 /* ========================================
    PORTFOLIO STYLES - Nikolay Tyumenev
-   ========================================
-   Easy-to-edit sections marked with EDIT comments
    ======================================== */
 
 /* ========== COLOR VARIABLES ========== */
-/* EDIT: Change your color scheme here */
 :root {
-    /* Main colors - Change these to customize your theme */
-    --primary-color: #2563eb;        /* Main blue color */
-    --secondary-color: #1e40af;      /* Darker blue */
-    --accent-color: #3b82f6;         /* Light blue accent */
-    --text-color: #1f2937;           /* Dark gray text */
-    --text-light: #6b7280;           /* Light gray text */
-    --background: #ffffff;           /* White background */
-    --background-alt: #f9fafb;       /* Light gray background */
-    --border-color: #e5e7eb;         /* Border color */
+    /* Main colors */
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --accent-color: #3b82f6;
+    --text-color: #1f2937;
+    --text-light: #6b7280;
+    --background: #ffffff;
+    --background-alt: #f9fafb;
+    --border-color: #e5e7eb;
     
-    /* EDIT: Change fonts here */
+    /* Fonts */
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-heading: 'Georgia', serif;
 }
@@ -39,8 +36,6 @@ body {
     line-height: 1.6;
     background-color: var(--background);
 }
-
-/* EDIT: Change link colors */
 a {
     color: var(--primary-color);
     text-decoration: none;
@@ -58,7 +53,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    /* EDIT: Change header padding */
+    
     padding: 1rem 0;
 }
 
@@ -70,12 +65,10 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
-
-/* EDIT: Logo styling */
 .logo h2 {
     font-family: var(--font-heading);
     color: var(--primary-color);
-    /* EDIT: Change logo font size */
+    
     font-size: 1.5rem;
 }
 
@@ -84,8 +77,6 @@ nav {
     list-style: none;
     gap: 2rem;
 }
-
-/* EDIT: Navigation link styling */
 .nav-links a {
     color: var(--text-color);
     font-weight: 500;
@@ -97,7 +88,7 @@ nav {
 }
 
 /* ========== HAMBURGER MENU ========== */
-/* EDIT: Hamburger button styling (mobile only) */
+
 .hamburger {
     display: none; /* Hidden on desktop */
     flex-direction: column;
@@ -150,44 +141,50 @@ body.menu-open {
 
 /* ========== HERO SECTION ========== */
 .hero {
-    /* EDIT: Change hero background color or add gradient */
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background-image: url('../img/background-image.jpg');
+    background-size: cover;
+    background-position: center;
     color: white;
-    /* EDIT: Change hero height */
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 2rem;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
 }
 
 .hero-content {
     max-width: 800px;
+    position: relative;
+    z-index: 1;
 }
-
-/* EDIT: Hero heading size */
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     font-family: var(--font-heading);
 }
-
-/* EDIT: Highlight color for name */
 .highlight {
     color: #fbbf24;
-    /* EDIT: Add underline or other decoration */
+    
     /* text-decoration: underline; */
 }
-
-/* EDIT: Subtitle styling */
 .subtitle {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 300;
 }
-
-/* EDIT: Description text */
 .description {
     font-size: 1.1rem;
     margin-bottom: 2rem;
@@ -201,8 +198,6 @@ body.menu-open {
     justify-content: center;
     flex-wrap: wrap;
 }
-
-/* EDIT: Primary button styling */
 .btn {
     padding: 0.75rem 2rem;
     border-radius: 5px;
@@ -221,8 +216,6 @@ body.menu-open {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-
-/* EDIT: Secondary button styling */
 .btn-secondary {
     background-color: transparent;
     color: white;
@@ -234,8 +227,6 @@ body.menu-open {
     color: var(--primary-color);
     transform: translateY(-2px);
 }
-
-/* EDIT: Small buttons for projects */
 .btn-small {
     padding: 0.5rem 1rem;
     background-color: var(--primary-color);
@@ -252,7 +243,7 @@ body.menu-open {
 }
 
 /* ========== GENERAL SECTIONS ========== */
-/* EDIT: Section padding */
+
 section {
     padding: 5rem 2rem;
 }
@@ -261,15 +252,13 @@ section {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-/* EDIT: Section title styling */
 .section-title {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 3rem;
     color: var(--text-color);
     font-family: var(--font-heading);
-    /* EDIT: Add underline or border */
+    
     position: relative;
 }
 
@@ -283,7 +272,7 @@ section {
 }
 
 /* ========== ABOUT SECTION ========== */
-/* EDIT: About section background */
+
 .about {
     background-color: var(--background-alt);
 }
@@ -295,14 +284,12 @@ section {
     flex-wrap: wrap;
     justify-content: center;
 }
-
-/* EDIT: Profile photo - CIRCULAR IMAGE */
 .profile-photo {
     width: 250px;
     height: 250px;
     border-radius: 50%; /* This makes it circular! */
     object-fit: cover; /* Crops image to fit circle */
-    border: 5px solid var(--primary-color); /* EDIT: Change border color */
+    border: 5px solid var(--primary-color); 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Nice shadow effect */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -312,8 +299,6 @@ section {
     transform: scale(1.05); /* Slightly grows on hover */
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
-
-/* EDIT: About text styling */
 .about-text {
     flex: 1;
     min-width: 300px;
@@ -327,15 +312,13 @@ section {
 }
 
 /* ========== SKILLS SECTION ========== */
-/* EDIT: Skills grid layout */
+
 .skills-grid {
     display: grid;
-    /* EDIT: Change number of columns (3 columns on desktop) */
+    
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
-
-/* EDIT: Skill card styling */
 .skill-card {
     background-color: var(--background);
     padding: 2rem;
@@ -349,35 +332,27 @@ section {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
-
-/* EDIT: Skill title */
 .skill-card h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
 }
-
-/* EDIT: Skill description */
 .skill-card p {
     color: var(--text-light);
     font-size: 0.95rem;
 }
 
 /* ========== PROJECTS SECTION ========== */
-/* EDIT: Projects background */
+
 .projects {
     background-color: var(--background-alt);
 }
-
-/* EDIT: Projects grid layout */
 .projects-grid {
     display: grid;
-    /* EDIT: Change columns (1 column on mobile, 2-3 on desktop) */
+    
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
-
-/* EDIT: Project card styling */
 .project-card {
     background-color: var(--background);
     border-radius: 10px;
@@ -390,15 +365,11 @@ section {
     transform: translateY(-10px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
-
-/* EDIT: Project image sizing */
 .project-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
-
-/* EDIT: Project info padding */
 .project-info {
     padding: 1.5rem;
 }
@@ -430,15 +401,11 @@ section {
     margin: 0 auto;
     text-align: center;
 }
-
-/* EDIT: Contact intro text */
 .contact-intro {
     font-size: 1.1rem;
     margin-bottom: 2rem;
     color: var(--text-light);
 }
-
-/* EDIT: Contact info styling */
 .contact-info {
     text-align: left;
     background-color: var(--background-alt);
@@ -456,7 +423,7 @@ section {
 }
 
 /* ========== FOOTER ========== */
-/* EDIT: Footer background and padding */
+
 footer {
     background-color: var(--text-color);
     color: white;
@@ -471,8 +438,6 @@ footer .container {
     flex-wrap: wrap;
     gap: 1rem;
 }
-
-/* EDIT: Social links in footer */
 .social-links {
     display: flex;
     gap: 1.5rem;
@@ -488,8 +453,6 @@ footer .container {
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
-/* EDIT: Adjust breakpoints as needed */
-
 /* Tablet and Mobile Navigation */
 @media (max-width: 768px) {
     /* Show hamburger menu */

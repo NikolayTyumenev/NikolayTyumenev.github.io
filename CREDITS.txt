@@ -1,0 +1,39 @@
+IMAGE CREDITS AND ATTRIBUTION
+==============================
+
+PROJECT IMAGES:
+--------------
+All project images were generated using AI.
+
+AI Generator Used:
+- Perchance AI Text-to-Image Generator
+- URL: https://perchance.org/ai-text-to-image-generator
+- License: Not copyrighted, free to use
+- Generated: 2025
+
+SPECIFIC IMAGES:
+---------------
+1. background-image.jpg - Hero section background (AI-generated)
+2. minerva-background.webp - Minerva Website project thumbnail (AI-generated)
+3. eeman-empire-background.jpg - Eeman Empire project thumbnail (personal)
+4. Kulu_Noteslogo.png - Hina's Website project logo (custom/personal)
+
+COPYRIGHT STATUS:
+----------------
+AI-generated images are:
+✓ Not copyrighted
+✓ Free to use
+✓ Generated specifically for this portfolio
+✓ No attribution required (but provided for transparency)
+
+PROFILE PHOTO:
+-------------
+profile-picture.jpg - Personal photo
+
+CODE AND DESIGN:
+---------------
+Website code and design by Nikolay Tyumenev
+- HTML, CSS, JavaScript: Original work
+- Layout and styling: Custom design
+
+LAST UPDATED: October 31, 2025
