@@ -1,8 +1,8 @@
-/* ========================================
+/*
    PORTFOLIO STYLES - Nikolay Tyumenev
-   ======================================== */
+*/
 
-/* ========== COLOR VARIABLES ========== */
+/* COLOR VARIABLES */
 :root {
     /* Main colors */
     --primary-color: #2563eb;
@@ -19,7 +19,7 @@
     --font-heading: 'Georgia', serif;
 }
 
-/* ========== RESET & BASICS ========== */
+/* RESET & BASICS */
 * {
     margin: 0;
     padding: 0;
@@ -46,7 +46,7 @@ a:hover {
     color: var(--secondary-color);
 }
 
-/* ========== HEADER & NAVIGATION ========== */
+/* HEADER & NAVIGATION */
 header {
     background-color: var(--background);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -87,7 +87,7 @@ nav {
     color: var(--primary-color);
 }
 
-/* ========== HAMBURGER MENU ========== */
+/* HAMBURGER MENU */
 
 .hamburger {
     display: none; /* Hidden on desktop */
@@ -110,7 +110,7 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* Hamburger animation when active */
+/* Hamburger animation */
 .hamburger.active .bar:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
 }
@@ -139,36 +139,28 @@ body.menu-open {
     overflow: hidden;
 }
 
-/* ========== HERO SECTION ========== */
+/* HERO SECTION */
 .hero {
-    background-image: url('../img/background-image.jpg');
+    
+    /* Background image with gradient overlay */
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.85) 0%, rgba(30, 64, 175, 0.85) 100%),
+                url('../img/background-image.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: white;
+    
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 2rem;
-    position: relative;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 0;
 }
 
 .hero-content {
     max-width: 800px;
-    position: relative;
-    z-index: 1;
 }
 .hero h1 {
     font-size: 3rem;
@@ -178,7 +170,6 @@ body.menu-open {
 .highlight {
     color: #fbbf24;
     
-    /* text-decoration: underline; */
 }
 .subtitle {
     font-size: 1.5rem;
@@ -191,7 +182,7 @@ body.menu-open {
     opacity: 0.9;
 }
 
-/* ========== BUTTONS ========== */
+/* BUTTONS */
 .cta-buttons {
     display: flex;
     gap: 1rem;
@@ -242,7 +233,7 @@ body.menu-open {
     transform: translateY(-2px);
 }
 
-/* ========== GENERAL SECTIONS ========== */
+/* GENERAL SECTIONS */
 
 section {
     padding: 5rem 2rem;
@@ -271,7 +262,7 @@ section {
     margin: 1rem auto 0;
 }
 
-/* ========== ABOUT SECTION ========== */
+/* ABOUT SECTION */
 
 .about {
     background-color: var(--background-alt);
@@ -311,7 +302,7 @@ section {
     color: var(--text-color);
 }
 
-/* ========== SKILLS SECTION ========== */
+/* SKILLS SECTION */
 
 .skills-grid {
     display: grid;
@@ -342,7 +333,7 @@ section {
     font-size: 0.95rem;
 }
 
-/* ========== PROJECTS SECTION ========== */
+/* PROJECTS SECTION */
 
 .projects {
     background-color: var(--background-alt);
@@ -391,7 +382,7 @@ section {
     gap: 1rem;
 }
 
-/* ========== CONTACT SECTION ========== */
+/* CONTACT SECTION */
 .contact {
     background-color: var(--background);
 }
@@ -422,7 +413,7 @@ section {
     color: var(--primary-color);
 }
 
-/* ========== FOOTER ========== */
+/* FOOTER */
 
 footer {
     background-color: var(--text-color);
@@ -452,7 +443,7 @@ footer .container {
     color: var(--accent-color);
 }
 
-/* ========== RESPONSIVE DESIGN ========== */
+/* RESPONSIVE DESIGN */
 /* Tablet and Mobile Navigation */
 @media (max-width: 768px) {
     /* Show hamburger menu */
@@ -653,4 +644,230 @@ section.visible {
 .hero {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ========== CSS ANIMATIONS ========== */
+
+/* Fade in animation for hero content */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero h1 {
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.subtitle {
+    animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.description {
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.cta-buttons {
+    animation: fadeInUp 1s ease-out 0.8s backwards;
+}
+
+/* Floating animation for highlight text */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.highlight {
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse animation for buttons on hover */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+    }
+}
+
+.btn-primary:hover {
+    animation: pulse 1.5s infinite;
+}
+
+/* Slide in from left for skill cards */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.skill-card {
+    animation: slideInLeft 0.6s ease-out;
+    animation-fill-mode: backwards;
+}
+
+.skill-card:nth-child(1) { animation-delay: 0.1s; }
+.skill-card:nth-child(2) { animation-delay: 0.2s; }
+.skill-card:nth-child(3) { animation-delay: 0.3s; }
+.skill-card:nth-child(4) { animation-delay: 0.4s; }
+.skill-card:nth-child(5) { animation-delay: 0.5s; }
+.skill-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Scale animation for project cards */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.project-card {
+    animation: scaleIn 0.5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Underline animation for section titles */
+@keyframes expandWidth {
+    from {
+        width: 0;
+    }
+    to {
+        width: 60px;
+    }
+}
+
+.section-title::after {
+    animation: expandWidth 0.8s ease-out 0.3s backwards;
+}
+
+/* Bounce animation for scroll-to-top indicator */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Gradient animation for hero overlay */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero::before {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 50, 0.4), rgba(0, 0, 0, 0.5));
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+}
+
+/* Typing cursor effect for navigation links */
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+.nav-link.nav-active::after {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: var(--primary-color);
+    margin-left: 3px;
+    animation: blink 1s infinite;
+}
+
+/* Shimmer effect for profile photo */
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.profile-photo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+    pointer-events: none;
+}
+
+.profile-photo {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fade in navigation on scroll */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    animation: fadeInDown 0.5s ease-out;
 }

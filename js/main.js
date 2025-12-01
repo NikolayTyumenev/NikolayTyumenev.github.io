@@ -1,11 +1,11 @@
-// ========================================
+//
 // PORTFOLIO JAVASCRIPT - Nikolay Tyumenev
-// ========================================
+//
 
-// Wait for DOM to load
+
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ========== HAMBURGER MENU ==========
+    // HAMBURGER MENU
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     const navLinkItems = document.querySelectorAll('.nav-link');
@@ -45,8 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     
-    // ========== SMOOTH SCROLLING ==========
-    // Already handled by CSS scroll-behavior, but adding extra smoothness
     navLinkItems.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -67,8 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     
-    // ========== SCROLL ANIMATIONS (Optional) ==========
-    // Add 'visible' class to elements when they come into view
+    // SCROLL ANIMATIONS
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -89,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     
-    // ========== ACTIVE NAV LINK ON SCROLL ==========
+    // ACTIVE NAV LINK ON SCROLL
     // Highlight current section in navigation
     window.addEventListener('scroll', function() {
         let current = '';
@@ -113,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     
-    // ========== HEADER SHADOW ON SCROLL ==========
+    //HEADER SHADOW ON SCROLL
     // Add shadow to header when scrolling down
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
@@ -126,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 
-// ========== CONSOLE MESSAGE ==========
+// CONSOLE MESSAGE
 // Fun little easter egg for developers who check the console
 console.log('%c👋 Hi there, Developer!', 'color: #2563eb; font-size: 20px; font-weight: bold;');
 console.log('%cLooking at the code? Check out my GitHub: https://github.com/NikolayTyumenev', 'color: #6b7280; font-size: 14px;');
