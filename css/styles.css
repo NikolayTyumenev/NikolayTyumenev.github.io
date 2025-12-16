@@ -871,3 +871,134 @@ section.visible {
 header {
     animation: fadeInDown 0.5s ease-out;
 }
+
+/* CSS SCROLL-DRIVEN ANIMATIONS 
+   Modern CSS Feature (2023-2024)
+   
+   Chrome for Developers - Animate Elements on Scroll
+https://developer.chrome.com/articles/scroll-driven-animations/*/
+
+@supports (animation-timeline: scroll()) {
+    
+    /* SCROLL PROGRESS BAR */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(to right, #2563eb, #3b82f6);
+        transform-origin: left;
+        transform: scaleX(0);
+        z-index: 1000;
+        animation: scroll-progress linear;
+        animation-timeline: scroll(root);
+    }
+    
+    @keyframes scroll-progress {
+        to { transform: scaleX(1); }
+    }
+    
+    /* PARALLAX HERO BACKGROUND */
+    .hero::before {
+        animation: parallax-bg linear;
+        animation-timeline: scroll(root);
+    }
+    
+    @keyframes parallax-bg {
+        to { transform: translateY(30%); }
+    }
+    
+    /* FADE IN SECTIONS */
+    section {
+        animation: section-fade linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
+    }
+    
+    @keyframes section-fade {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+    }
+    
+    .hero { animation: none; }
+    
+    /* ZOOM PROJECT IMAGES */
+    .project-image {
+        animation: image-zoom linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+    }
+    
+    @keyframes image-zoom {
+        from {
+            transform: scale(0.8);
+            opacity: 0.5;
+        }
+    }
+    
+    /* BLUR HEADER ON SCROLL */
+    header {
+        animation: header-blur linear;
+        animation-timeline: scroll(root);
+        animation-range: 0 100px;
+    }
+    
+    @keyframes header-blur {
+        to {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    }
+    
+    /* ROTATE SKILL CARDS */
+    .skill-card {
+        animation: card-rotate linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
+    }
+    
+    @keyframes card-rotate {
+        from {
+            transform: perspective(1000px) rotateY(-15deg);
+            opacity: 0;
+        }
+    }
+    
+    /* PROFILE PHOTO SCALE */
+    .profile-photo {
+        animation: photo-scale linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 50%;
+    }
+    
+    @keyframes photo-scale {
+        from {
+            transform: scale(0.5);
+            opacity: 0;
+            filter: blur(10px);
+        }
+    }
+}
+
+/* FALLBACK FOR OLDER BROWSERS */
+@supports not (animation-timeline: scroll()) {
+    section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .hero {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

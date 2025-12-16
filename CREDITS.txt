@@ -36,4 +36,7 @@ Website code and design by Nikolay Tyumenev
 - HTML, CSS, JavaScript: Original work
 - Layout and styling: Custom design
 
-LAST UPDATED: October 31, 2025
+
+- CSS Scroll Animation Used : Chrome for Developers - Animate Elements on Scroll
+https://developer.chrome.com/articles/scroll-driven-animations/
+LAST UPDATED: December 15, 2025
