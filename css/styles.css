@@ -425,8 +425,8 @@ section {
 }
 
 #lightbox-img {
-    max-width: 90vw;
-    max-height: 80vh;
+    width: 80vw;
+    height: 80vh;
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 0 40px rgba(64, 172, 174, 0.3);
