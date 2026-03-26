@@ -28,6 +28,7 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#beyond" class="nav-link">Beyond the Code</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
@@ -54,7 +55,7 @@
             <div class="about-content">
                 <img src="img/profile-picture.jpg" alt="Nikolay Tyumenev" class="profile-photo">
                 <div class="about-text">
-                    <p>My background is in architecture, and I carry that same structural thinking and eye for detail into every interface I build. I think of it as internet architecture.</p>
+                    <p>My background is in architecture, and I carry that same structural thinking and eye for detail into every interface I build. I think of it as internet architecture. That precision is the core of my brand: coiled, deliberate, and built to last.</p>
                     <p>I work across the full stack: HTML/CSS/JS, React, PHP, MySQL, WordPress, Figma. I bring a strong design sensibility to everything I touch, whether that's wireframing in Figma, building out a custom WordPress theme, or coding a site from scratch. I've shipped real projects for real clients and I know how to manage timelines, handle feedback cycles, and get things done.</p>
                     <p>I'm also multilingual, fluent in English and Russian and conversational in Hebrew, and I've spent several years in leadership and client-facing roles before pivoting fully into web. That background shows up in how I communicate, collaborate, and take ownership of a project.</p>
                 </div>
@@ -115,7 +116,19 @@
 
                 <!-- Project 1 -->
                 <div class="project-card">
-                    <img src="img/minerva-background.webp" alt="Minerva Website" class="project-image">
+                    <div class="project-screenshots">
+                        <img src="img/minerva-home.png" alt="Minerva Home Page" class="screenshot active">
+                        <img src="img/minerva-download.png" alt="Minerva Download Page" class="screenshot">
+                        <img src="img/minerva-faq.png" alt="Minerva FAQ Page" class="screenshot">
+                        <button class="gallery-arrow arrow-left" onclick="galleryNav(this, -1)">&#8249;</button>
+                        <button class="gallery-arrow arrow-right" onclick="galleryNav(this, 1)">&#8250;</button>
+                        <button class="gallery-fullscreen" onclick="openLightbox(this)">&#x26F6;</button>
+                        <div class="screenshot-dots">
+                            <span class="dot active" onclick="switchScreenshot(this, 0)"></span>
+                            <span class="dot" onclick="switchScreenshot(this, 1)"></span>
+                            <span class="dot" onclick="switchScreenshot(this, 2)"></span>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <h3>Minerva: TERA Private Server Hub</h3>
                         <p class="project-role"><strong>Role:</strong> Solo Developer & Designer</p>
@@ -130,7 +143,17 @@
 
                 <!-- Project 2 -->
                 <div class="project-card">
-                    <img src="img/eeman-empire-backround.jpg" alt="Eeman Empire Website" class="project-image">
+                    <div class="project-screenshots">
+                        <img src="img/eeman-home.png" alt="Eeman Empire Home Page" class="screenshot active">
+                        <img src="img/eeman-popup.png" alt="Eeman Empire Popup" class="screenshot">
+                        <button class="gallery-arrow arrow-left" onclick="galleryNav(this, -1)">&#8249;</button>
+                        <button class="gallery-arrow arrow-right" onclick="galleryNav(this, 1)">&#8250;</button>
+                        <button class="gallery-fullscreen" onclick="openLightbox(this)">&#x26F6;</button>
+                        <div class="screenshot-dots">
+                            <span class="dot active" onclick="switchScreenshot(this, 0)"></span>
+                            <span class="dot" onclick="switchScreenshot(this, 1)"></span>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <h3>Eeman Empire: Painting Company Website</h3>
                         <p class="project-role"><strong>Role:</strong> Lead Developer & Designer</p>
@@ -145,7 +168,25 @@
 
                 <!-- Project 3 -->
                 <div class="project-card">
-                    <img src="img/Kulu_Noteslogo.png" alt="Hina's Website" class="project-image">
+                    <div class="project-screenshots">
+                        <img src="img/hina-home.png" alt="Hina's Website Home" class="screenshot active">
+                        <img src="img/hina-login.png" alt="Hina's Website Login" class="screenshot">
+                        <img src="img/hina-gallery.png" alt="Hina's Website Gallery" class="screenshot">
+                        <img src="img/hina-thoughts.png" alt="Hina's Website Thoughts" class="screenshot">
+                        <img src="img/hina-dreams.png" alt="Hina's Website Dreams" class="screenshot">
+                        <img src="img/hina-memories.png" alt="Hina's Website Memories" class="screenshot">
+                        <button class="gallery-arrow arrow-left" onclick="galleryNav(this, -1)">&#8249;</button>
+                        <button class="gallery-arrow arrow-right" onclick="galleryNav(this, 1)">&#8250;</button>
+                        <button class="gallery-fullscreen" onclick="openLightbox(this)">&#x26F6;</button>
+                        <div class="screenshot-dots">
+                            <span class="dot active" onclick="switchScreenshot(this, 0)"></span>
+                            <span class="dot" onclick="switchScreenshot(this, 1)"></span>
+                            <span class="dot" onclick="switchScreenshot(this, 2)"></span>
+                            <span class="dot" onclick="switchScreenshot(this, 3)"></span>
+                            <span class="dot" onclick="switchScreenshot(this, 4)"></span>
+                            <span class="dot" onclick="switchScreenshot(this, 5)"></span>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <h3>Hina's Website: Personal Space and Online Diary</h3>
                         <p class="project-role"><strong>Role:</strong> Solo Developer & Designer</p>
@@ -158,6 +199,50 @@
                     </div>
                 </div>
 
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-screenshots">
+                        <img src="img/elite-home.png" alt="Elite Towing Solutions Home" class="screenshot active">
+                        <img src="img/elite-form1.png" alt="Elite Towing Transport Form" class="screenshot">
+                        <img src="img/elite-form2.png" alt="Elite Towing Schedule Form" class="screenshot">
+                        <button class="gallery-arrow arrow-left" onclick="galleryNav(this, -1)">&#8249;</button>
+                        <button class="gallery-arrow arrow-right" onclick="galleryNav(this, 1)">&#8250;</button>
+                        <button class="gallery-fullscreen" onclick="openLightbox(this)">&#x26F6;</button>
+                        <div class="screenshot-dots">
+                            <span class="dot active" onclick="switchScreenshot(this, 0)"></span>
+                            <span class="dot" onclick="switchScreenshot(this, 1)"></span>
+                            <span class="dot" onclick="switchScreenshot(this, 2)"></span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Elite Towing Solutions: Professional Transport Website</h3>
+                        <p class="project-role"><strong>Role:</strong> Solo Developer & Designer</p>
+                        <p>A professional flatbed transport and towing service website for a local Edmonton business. Features a full services breakdown, areas served, an auto-calculate distance form for instant transport quotes, and a complete booking flow. PHP handles form submissions and quote logic on the back end.</p>
+                        <p class="project-tech"><strong>Tools:</strong> HTML5, CSS3, JavaScript, PHP</p>
+                        <p class="project-accomplishments"><strong>Accomplishments:</strong> Built a distance-calculating quote form from scratch; designed a polished trust-focused layout for a service business; handled full client relationship including branding, content structure, and iterative feedback.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/NikolayTyumenev/Elite-Towing-Solution-Website" class="btn-small" target="_blank">View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BEYOND THE CODE SECTION -->
+    <section id="beyond" class="beyond">
+        <div class="container">
+            <h2 class="section-title">Beyond the Code</h2>
+            <div class="beyond-grid">
+                <div class="beyond-card">
+                    <h3>Volunteer Work</h3>
+                    <p>All four of my featured projects were built as volunteer or passion work with no pay and no deadlines. Minerva (gaming community site), Elite Towing Solutions (my father's towing business), Eeman Empire (a local painting contractor), and Hina's Website (a personal space for my wife) were each taken on by choice to build real experience, solve real problems, and deliver something people would actually use.</p>
+                </div>
+                <div class="beyond-card">
+                    <h3>Languages</h3>
+                    <p>Fluent in English and Russian, conversational in Hebrew. Working across languages has made me a better communicator and collaborator, especially in diverse team environments.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -185,5 +270,14 @@
             </div>
         </div>
     </footer>
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
+        <button class="lightbox-arrow lightbox-left" onclick="lightboxNav(-1)">&#8249;</button>
+        <img id="lightbox-img" src="" alt="Full screen preview">
+        <button class="lightbox-arrow lightbox-right" onclick="lightboxNav(1)">&#8250;</button>
+        <div id="lightbox-dots" class="lightbox-dots"></div>
+    </div>
+
 </body>
 </html>

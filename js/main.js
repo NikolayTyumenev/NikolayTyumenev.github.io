@@ -123,6 +123,96 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 
+// SCREENSHOT GALLERY
+let lightboxImages = [];
+let lightboxIndex = 0;
+
+function getGalleryState(el) {
+    const gallery = el.closest('.project-screenshots');
+    const screenshots = Array.from(gallery.querySelectorAll('.screenshot'));
+    const dots = Array.from(gallery.querySelectorAll('.dot'));
+    const current = screenshots.findIndex(s => s.classList.contains('active'));
+    return { gallery, screenshots, dots, current };
+}
+
+function setGalleryIndex(screenshots, dots, index) {
+    screenshots.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    screenshots[index].classList.add('active');
+    if (dots[index]) dots[index].classList.add('active');
+}
+
+function switchScreenshot(dotEl, index) {
+    const { screenshots, dots } = getGalleryState(dotEl);
+    setGalleryIndex(screenshots, dots, index);
+}
+
+function galleryNav(btn, dir) {
+    const { screenshots, dots, current } = getGalleryState(btn);
+    const next = (current + dir + screenshots.length) % screenshots.length;
+    setGalleryIndex(screenshots, dots, next);
+}
+
+function openLightbox(btn) {
+    const { screenshots, current } = getGalleryState(btn);
+    lightboxImages = screenshots.map(s => ({ src: s.src, alt: s.alt }));
+    lightboxIndex = current;
+    updateLightbox();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function openLightboxFromImage(img) {
+    const gallery = img.closest('.project-screenshots');
+    const screenshots = Array.from(gallery.querySelectorAll('.screenshot'));
+    lightboxImages = screenshots.map(s => ({ src: s.src, alt: s.alt }));
+    lightboxIndex = screenshots.indexOf(img);
+    updateLightbox();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function lightboxNav(dir) {
+    lightboxIndex = (lightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
+    updateLightbox();
+}
+
+function updateLightbox() {
+    const img = document.getElementById('lightbox-img');
+    const dotsEl = document.getElementById('lightbox-dots');
+    img.src = lightboxImages[lightboxIndex].src;
+    img.alt = lightboxImages[lightboxIndex].alt;
+    dotsEl.innerHTML = lightboxImages.map((_, i) =>
+        `<span class="dot ${i === lightboxIndex ? 'active' : ''}" onclick="lightboxIndex=${i};updateLightbox()"></span>`
+    ).join('');
+}
+
+// Close lightbox on backdrop click
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target === this) closeLightbox();
+    });
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        const lb = document.getElementById('lightbox');
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'ArrowLeft') lightboxNav(-1);
+        if (e.key === 'ArrowRight') lightboxNav(1);
+        if (e.key === 'Escape') closeLightbox();
+    });
+    // Click on screenshot image to open lightbox
+    document.querySelectorAll('.project-screenshots .screenshot').forEach(img => {
+        img.addEventListener('click', function() {
+            openLightboxFromImage(this);
+        });
+    });
+});
+
 // CONSOLE MESSAGE
 // Fun little easter egg for developers who check the console
 console.log('%c👋 Hi there, Developer!', 'color: #2563eb; font-size: 20px; font-weight: bold;');
